@@ -1,5 +1,9 @@
 # Prerequisites
 *.d
+*.user
+*.swp
+.ycm_extra_conf.py
+*.DS_Store
 
 # Compiled Object files
 *.slo
