@@ -9,9 +9,15 @@ EntryPoint::EntryPoint(QString title, QString description,GLWidgetFatctoryFn fn)
 
 void EntryPoint::show()
 {
-    GLBaseWidget *wid = mFactoryFn();
-    wid->setAttribute(Qt::WA_DeleteOnClose);
+    GLWindow *wid = mFactoryFn();
     wid->show();
+    QObject::connect(wid,&GLWindow::visibleChanged,[=](bool isVisible){
+        if(!isVisible)
+        {
+            wid->close();
+            wid->deleteLater();
+        }
+    });
 }
 
 QString EntryPoint::title() const

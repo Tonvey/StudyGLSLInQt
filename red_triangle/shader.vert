@@ -1,4 +1,4 @@
-#version 410
+#version 330
 //属性，这个属性用来获取定点位置，具体的顶点值，由C++传值
 in vec3 VertexPosition;
 //shader主程序

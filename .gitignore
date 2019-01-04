@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-*.user
+*.user*
 *.swp
 .ycm_extra_conf.py
 *.DS_Store

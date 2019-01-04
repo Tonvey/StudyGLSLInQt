@@ -24,20 +24,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
+    main.cpp \
+    mainwindow.cpp \
     entrypoint.cpp \
-    glbasewidget.cpp \
-    red_triangle/redtriangle.cpp
+    red_triangle/redtriangle.cpp \
+    glwindow.cpp
 
 HEADERS += \
-        mainwindow.h \
+    mainwindow.h \
     entrypoint.h \
-    glbasewidget.h \
-    red_triangle/redtriangle.h
+    red_triangle/redtriangle.h \
+    glwindow.h
 
 FORMS += \
-        mainwindow.ui
+    mainwindow.ui
 
 RESOURCES += \
     shaders.qrc

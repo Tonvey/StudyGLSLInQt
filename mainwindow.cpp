@@ -2,13 +2,15 @@
 #include "ui_mainwindow.h"
 #include "red_triangle/redtriangle.h"
 #include <QPushButton>
+#include <functional>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->mEntryList.append(EntryPoint("RedTriangle","Red triangle sample",[](){return (GLBaseWidget*)(new RedTriangle);}));
+    this->resize(800,600);
+    this->mEntryList.append(EntryPoint("RedTriangle","Red triangle sample",[](){return (GLWindow*)(new RedTriangle);}));
     for(auto it = this->mEntryList.begin();it!=mEntryList.end();++it)
     {
         QPushButton *btn = new QPushButton(it->title(),this);

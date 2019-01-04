@@ -2,19 +2,20 @@
 #define REDTRIANGLE_H
 
 #include <QWidget>
-#include "glbasewidget.h"
+//#include "glbasewidget.h"
+#include "glwindow.h"
 #include <QOpenGLBuffer>
 #include <QOpenGLShaderProgram>
 #include <QOpenGLVertexArrayObject>
-#include <QOpenGLFunctions_4_1_Core>
 
-class RedTriangle : public GLBaseWidget
+class RedTriangle : public GLWindow
 {
     Q_OBJECT
 public:
-    explicit RedTriangle(QWidget *parent = nullptr);
+    RedTriangle(QWidget *parent = nullptr);
     virtual void initializeGL()override;
     virtual void paintGL()override;
+    ~RedTriangle();
 
 signals:
 
