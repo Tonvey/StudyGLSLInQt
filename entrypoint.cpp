@@ -11,6 +11,7 @@ void EntryPoint::show()
 {
     GLWindow *wid = mFactoryFn();
     wid->show();
+    //TODO : How to detect QOpenGLWindow closed?
     QObject::connect(wid,&GLWindow::visibleChanged,[=](bool isVisible){
         if(!isVisible)
         {
