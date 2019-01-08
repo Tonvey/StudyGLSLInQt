@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>red_triangle/shader.frag</file>
         <file>red_triangle/shader.vert</file>
+        <file>red_triangle_ebo/shader.frag</file>
+        <file>red_triangle_ebo/shader.vert</file>
     </qresource>
 </RCC>
