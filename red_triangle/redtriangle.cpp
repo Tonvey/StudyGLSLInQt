@@ -54,7 +54,7 @@ void RedTriangle::paintGL()
     this->mShaderProgram->enableAttributeArray(this->mVertexPositionName);
     this->mVAO.bind();
     this->mVBO.bind();
-    glDrawArraysInstanced(GL_TRIANGLES,0,3,1);
+    glDrawArrays(GL_TRIANGLES,0,3);
     this->mVBO.release();
     this->mVAO.release();
     this->mShaderProgram->disableAttributeArray(this->mVertexPositionName);
