@@ -29,21 +29,22 @@ SOURCES += \
     entrypoint.cpp \
     red_triangle/redtriangle.cpp \
     glwindow.cpp \
-    red_triangle_ebo/redtriangle_ebo.cpp
+    red_triangle_ebo/redtriangle_ebo.cpp \
+    texture/texture.cpp
 
 HEADERS += \
     mainwindow.h \
     entrypoint.h \
     red_triangle/redtriangle.h \
     glwindow.h \
-    red_triangle_ebo/redtriangle_ebo.h
+    red_triangle_ebo/redtriangle_ebo.h \
+    texture/texture.h
 
 FORMS += \
     mainwindow.ui
 
 RESOURCES += \
-    shaders.qrc
+    shaders.qrc \
+    res.qrc
 
-DISTFILES += \
-    red_triangle_ebo/shader.frag \
-    red_triangle_ebo/shader.vert
+DISTFILES +=
