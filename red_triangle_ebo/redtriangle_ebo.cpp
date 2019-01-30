@@ -76,11 +76,4 @@ void RedTriangleEBO::paintGL()
 }
 RedTriangleEBO::~RedTriangleEBO()
 {
-    //TODO : Need destroy manually?
-    if(mVBO.isCreated())
-        mVBO.destroy();
-    if(mEBO.isCreated())
-        mEBO.destroy();
-    if(mVAO.isCreated())
-        mVAO.destroy();
 }

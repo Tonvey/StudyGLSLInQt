@@ -63,11 +63,6 @@ void RedTriangle::paintGL()
 
 RedTriangle::~RedTriangle()
 {
-    //TODO : Need destroy manually?
-    if(mVBO.isCreated())
-        mVBO.destroy();
-    if(mVAO.isCreated())
-        mVAO.destroy();
 }
 
 
