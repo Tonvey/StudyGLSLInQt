@@ -8,6 +8,25 @@
 #include <QSurface>
 #include <QDebug>
 
+//vertexes data
+static const float vertexes[] = {
+    0.5f, 0.5f, -1.0f,   // 右上角
+    0.5f, -0.5f, -1.0f,  // 右下角
+    -0.5f, -0.5f, -1.0f, // 左下角
+    -0.5f, 0.5f, -1.0f   // 左上角
+};
+static const GLfloat uvBuffer[] = {
+    1.0,1.0,
+    1.0,0.0,
+    0.0,0.0,
+    0.0,1.0,
+};
+//indices data
+static const GLuint indices[] = {
+    // 起始于0!
+    0, 1, 3, // 第一个三角形
+    1, 2, 3  // 第二个三角形
+};
 Texture::Texture()
     :mVBO(QOpenGLBuffer::VertexBuffer)
     ,mUV(QOpenGLBuffer::VertexBuffer)
@@ -17,25 +36,6 @@ Texture::Texture()
 }
 void Texture::initializeGL()
 {
-    //vertexes data
-    const float vertexes[] = {
-        0.5f, 0.5f, -1.0f,   // 右上角
-        0.5f, -0.5f, -1.0f,  // 右下角
-        -0.5f, -0.5f, -1.0f, // 左下角
-        -0.5f, 0.5f, -1.0f   // 左上角
-    };
-    const GLfloat uvBuffer[] = {
-        1.0,1.0,
-        1.0,0.0,
-        0.0,0.0,
-        0.0,1.0,
-    };
-    //indices data
-    const GLuint indices[] = {
-        // 起始于0!
-        0, 1, 3, // 第一个三角形
-        1, 2, 3  // 第二个三角形
-    };
     GLWindow::initializeGL();
     this->makeCurrent();
     this->mShaderProgram = compileShader(":/texture/shader.vert",":/texture/shader.frag");
@@ -101,8 +101,10 @@ void Texture::paintGL()
     this->mUV.bind();
     this->mEBO.bind();
     //this->mShaderProgram->setUniformValue(this->mTextureName,0);
+    QMatrix4x4 mvp = this->makeMVP();
+    this->mShaderProgram->setUniformValue("mvp",mvp);
     this->mTBO->bind();
-    glDrawElements(GL_TRIANGLES,6,GL_UNSIGNED_INT,(void*)0);
+    glDrawElements(GL_TRIANGLES,sizeof(indices)/sizeof(indices[0]),GL_UNSIGNED_INT,(void*)0);
     this->mTBO->release();
     this->mEBO.release();
     this->mUV.release();
