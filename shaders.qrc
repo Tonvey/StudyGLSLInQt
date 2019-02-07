@@ -6,5 +6,7 @@
         <file>red_triangle_ebo/shader.vert</file>
         <file>texture/shader.frag</file>
         <file>texture/shader.vert</file>
+        <file>cube/shader.frag</file>
+        <file>cube/shader.vert</file>
     </qresource>
 </RCC>

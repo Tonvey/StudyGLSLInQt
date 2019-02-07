@@ -30,7 +30,8 @@ SOURCES += \
     red_triangle/redtriangle.cpp \
     glwindow.cpp \
     red_triangle_ebo/redtriangle_ebo.cpp \
-    texture/texture.cpp
+    texture/texture.cpp \
+    cube/cube.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -38,7 +39,8 @@ HEADERS += \
     red_triangle/redtriangle.h \
     glwindow.h \
     red_triangle_ebo/redtriangle_ebo.h \
-    texture/texture.h
+    texture/texture.h \
+    cube/cube.h
 
 FORMS += \
     mainwindow.ui
